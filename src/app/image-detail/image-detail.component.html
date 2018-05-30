@@ -1,0 +1,10 @@
+<div class="row">
+  <button class="btn btn-primary" (click)="downLoad(imageUrl)">Download</button>
+  <button class="btn btn-danger" (click)="delete()">Delete</button>
+  <div class=col-md-12>
+    <div [ngStyle]="{'background-image':'url('+ imageUrl +')'}" 
+      class="img-container">
+      
+    </div>
+  </div>
+</div>

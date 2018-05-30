@@ -1,0 +1,61 @@
+* {
+  color: rgba(255, 255, 255, 1) !important;
+}
+ul { padding:0; width:100%; margin:20px auto}
+li {
+  display: block;
+  width: min-content;
+  float: left;
+    max-width: 210px;
+    max-height: 250px;
+    width: 210px;
+    height: 250px;
+    position: relative;
+
+
+
+}
+
+.tn {
+  margin:6px 6px;
+  border: 4px solid #eee;
+  box-shadow:#555 1px 1px 8px 1px;
+  cursor: pointer;
+  height: auto;
+  width: 200px;
+
+}
+
+h2{
+  margin-bottom: 20px;
+}
+
+.wrap {
+  background: rebeccapurple;
+  height: 100%;
+  display: flex;
+  background-image: url('./../../assets/images/M_Cloud_Computing_Banner_01-2.jpg');
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #999;
+  padding-right: 0px;
+  padding-left: 0px;
+  min-height: 100vh;
+
+}
+.container {
+  margin-top: 50px ;
+  background: rgba(0, 0, 0, 0.75) ;
+}
+.btn-group{
+      padding-left: 2px;
+      padding-right: 2px;
+      margin-left: 4px;
+       position: absolute;
+       bottom: 0px
+
+
+}

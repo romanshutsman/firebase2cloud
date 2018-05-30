@@ -1,0 +1,39 @@
+.container{
+  padding: 5%;
+  margin-top: 50px;
+  /* margin-top: 80px; */
+}
+
+.heading{
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+button{
+  height: 60px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.wrap {
+  background: rebeccapurple;
+  height: 100vh;
+  display: flex;
+  background-image: url('./../../assets/images/upload.jpg');
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #999;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.container {
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 90%;
+}
+label {
+  cursor: pointer;
+}

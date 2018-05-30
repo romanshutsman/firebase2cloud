@@ -1,0 +1,29 @@
+<div class="wrap">
+    <div class="container">
+        <div class="row">
+            <div *ngIf="!emailVerify">
+                <h1>Будь ласка верифікуй email!</h1>
+                <button class="btn btn-primary" (click)="SendVerification()">Повторити спробу!</button>
+            </div>
+            <div *ngIf="emailVerify">
+                <div *ngIf="countImg == 0">
+                    <h1>У тебе немає Фотографій!</h1>
+                </div>
+                <div *ngIf="countImg > 0">
+                    <h2>Останні фотографії</h2>
+                    <ul id="thumbnailsList">
+                        <li *ngFor="let image of images | async" class="img">
+                            <a [routerLink]="['/image', image.$key]">
+                                <img src="{{image.url}}" class="tn">
+                            </a>
+                            <span class="btn-group">
+                                <button class="btn btn-primary" (click)="down(image.url)">Завантажити</button>
+                                <button class="btn btn-danger" (click)="delete(image.$key)">Видалити</button>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

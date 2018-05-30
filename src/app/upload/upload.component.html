@@ -1,0 +1,30 @@
+<div class="wrap">
+  <div class="container">
+    <div class="row" *ngIf="!emailVerify">
+      <h1>Будь ласка верифікуй email!</h1>
+      <button class="btn btn-primary" (click)="SendVerification()">Send again!</button>
+    </div>
+    <div class="row" *ngIf="emailVerify">
+      <div *ngIf="upload">
+        <div class="progress">
+          <div class="progress-bar progress-bar-animated" [ngStyle]="{ 'width': upload?.progress + '%' }"></div>
+        </div>
+        Progress: {{upload?.progress}}% Complete
+      </div>
+      <div class="container">
+        <div class="row">
+          <h2 class="heading" style="text-align: center">Завантажити нові Фотографії!</h2>
+          <div class="custom-file" style="display: flex; justify-content:center;">
+            <input type="file" (change)="handleFiles($event)" multiple style=" display: none; " class="custom-file-input" id="customFile">
+            <label class="custom-file-label btn btn-success" for="customFile">Вибрати файли</label>
+          </div>
+          <h3 *ngIf="choseImg.length > 0">Вибрані зображення:</h3>
+          <ul *ngFor=" let img of choseImg">
+            <li>{{img}}</li>
+          </ul>
+          <button class="btn btn-primary" (click)="uploadFiles()">Завантажити</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
