@@ -17,14 +17,16 @@ export class AuthenticationService {
       .then(response => {
         firebase.auth().currentUser.sendEmailVerification();
         console.log(response.uid);
+        console.log(response);
         localStorage.setItem('uid', response.uid);
       })
       .catch(error => console.log(error));
   }
   login(user: User) {
+    console.log(this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password));
     return this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
   }
-
+  
   logout() {
     return this.afAuth.auth.signOut();
   }

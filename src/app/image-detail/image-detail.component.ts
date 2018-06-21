@@ -34,7 +34,7 @@ export class ImageDetailComponent implements OnInit {
     this.router.navigateByUrl('/gallery');
   }
   downLoad(url) {
-    console.log(url);
+    // console.log(url);
     // const headers = new Headers();
     // headers.append('Access-Control-Allow-Headers', 'Content-Type');
     // headers.append('Access-Control-Allow-Methods', 'GET');

@@ -18,6 +18,7 @@ export class LoginComponent {
   signIn() {
     this.authService.login({ email: this.email, password: this.password })
       .then(resolve => {
+        console.log(resolve);
          console.log(resolve.uid);
         localStorage.setItem('uid', resolve.uid); 
         this.router.navigate(['gallery'])
