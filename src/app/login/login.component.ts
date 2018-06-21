@@ -12,8 +12,8 @@ export class LoginComponent {
   email: string;
   password: string;
   errorMsg: string;
-
-  constructor(private authService: AuthenticationService, private router: Router) { }
+constructor(private authService: AuthenticationService, private router: Router) {
+}
 
   signIn() {
     this.authService.login({ email: this.email, password: this.password })

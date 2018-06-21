@@ -1,7 +1,7 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
-import { ImageService } from '../services/image.service';
+import { ImageService } from './../services/image.service';
 import { ActivatedRoute } from '@angular/router';
-import { GalleryImage } from '../models/galleryImage.model';
+import { GalleryImage } from './../models/galleryImage.model';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { RouterModule, Routes, Router } from '@angular/router';
@@ -11,19 +11,29 @@ import { RouterModule, Routes, Router } from '@angular/router';
   styleUrls: ['./image-detail.component.css']
 })
 export class ImageDetailComponent implements OnInit {
-  private imageUrl = '';
-  private basePath = '/uploads';
-  constructor(private imageService: ImageService,
+   imageUrl = '';
+   basePath = '/uploads';
+  constructor(
+    private imageService: ImageService,
     private db: AngularFireDatabase,
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router) {
 
+   } 
+   ngOnInit() {
+     setTimeout(() => {
+       console.log(this.imageUrl);
+     }, 1000);
+     console.log(this.route.snapshot.params['id']);
+     this.getImageUrl(this.route.snapshot.params['id']);
+   }
   getImageUrl(key: string) {
     this.imageService.getImage(key)
       .then(image =>
         {
           console.log(image.url);
           this.imageUrl = image.url;
+
         });
   }
   delete(key) {
@@ -53,11 +63,5 @@ export class ImageDetailComponent implements OnInit {
     // xhr.open('GET', url);
     // xhr.send();
   }
-  ngOnInit() {
-    setTimeout(() => {
-      console.log(this.imageUrl);
-    }, 1000);
-    console.log(this.route.snapshot.params['id']);
-    this.getImageUrl(this.route.snapshot.params['id']);
-  }
+
 }
